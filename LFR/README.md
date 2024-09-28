@@ -15,7 +15,7 @@ This code controls a robot car equipped with two line sensors and motors. The go
  - ```stop()```: Stops the robot.
 
 ## Line Sensor Readings:
-```leftSensor``` and ```rightSensor```: Store the values read from the line sensors.
+```LEFT_SENSOR``` and ```RIGHT_SENSOR```: Store the values read from the line sensors.
 
 ## Robot Behavior:
 The ```loop()``` function continuously checks the line sensor readings.
