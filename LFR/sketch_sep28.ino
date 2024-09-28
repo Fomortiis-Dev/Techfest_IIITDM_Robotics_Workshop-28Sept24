@@ -31,7 +31,7 @@ void setup() {
 	pinMode(enB,OUTPUT);
 
 	pinMode(A0, INPUT); // initialize Left sensor as an input
-    pinMode(A1, INPUT); // initialize Right sensor as an input
+	pinMode(A1, INPUT); // initialize Right sensor as an input
 }
 
 void loop() {
@@ -39,16 +39,16 @@ void loop() {
 	int LEFT_SENSOR = digitalRead(A0);
    	int RIGHT_SENSOR = digitalRead(A1);
    	if(RIGHT_SENSOR==0 && LEFT_SENSOR==0) {
-    	 forward(); //Moving forward
+		forward(); //Moving forward
    	}
    	else if(RIGHT_SENSOR==0 && LEFT_SENSOR==1) {
-    	 right(); //Turn Right
+		right(); //Turn Right
    	}
    	else if(RIGHT_SENSOR==1 && LEFT_SENSOR==0) {
-    	 left(); //Turn Left
+		left(); //Turn Left
    	}
    	else if(RIGHT_SENSOR==1 && LEFT_SENSOR==1) {
-    	 Stop();  //Stopping the device
+		Stop();  //Stopping the device
    	}
 }
 
@@ -85,8 +85,8 @@ void right() {
   	digitalWrite(in4, LOW);
 
     // Setting motor speeds for turning right
-    analogWrite(enA, LeftRotationSpeed);
-	  analogWrite(enB, RightRotationSpeed);
+	analogWrite(enA, LeftRotationSpeed);
+	analogWrite(enB, RightRotationSpeed);
 }
 
 void left()
