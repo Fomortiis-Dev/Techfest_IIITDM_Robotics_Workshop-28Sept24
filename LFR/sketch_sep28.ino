@@ -22,20 +22,21 @@ void left();
 void stop();
 
 void setup() {
-	  pinMode(in1,OUTPUT);
-	  pinMode(in2,OUTPUT);
-	  pinMode(in3,OUTPUT);
-	  pinMode(in4,OUTPUT);
+	pinMode(in1,OUTPUT);
+	pinMode(in2,OUTPUT);
+	pinMode(in3,OUTPUT);
+	pinMode(in4,OUTPUT);
 
-	  pinMode(enA,OUTPUT);
-	  pinMode(enB,OUTPUT);
+	pinMode(enA,OUTPUT);
+	pinMode(enB,OUTPUT);
 
-	  pinMode(A0, INPUT); // initialize Left sensor as an input
+	pinMode(A0, INPUT); // initialize Left sensor as an input
     pinMode(A1, INPUT); // initialize Right sensor as an input
 }
 
 void loop() {
-	  int LEFT_SENSOR = digitalRead(A0);
+	// Read line sensor values
+	int LEFT_SENSOR = digitalRead(A0);
    	int RIGHT_SENSOR = digitalRead(A1);
    	if(RIGHT_SENSOR==0 && LEFT_SENSOR==0) {
     	 forward(); //Moving forward
@@ -54,7 +55,7 @@ void loop() {
 // Function definitions for robot movements
 void forward() {
     // Setting motor directions for forward movement
-	  digitalWrite(in1, HIGH);
+	digitalWrite(in1, HIGH);
   	digitalWrite(in2, LOW);
   	digitalWrite(in3, HIGH);
   	digitalWrite(in4, LOW);
@@ -78,7 +79,7 @@ void backward() {
 
 void right() {
     // Setting motor directions for turning right
-	  digitalWrite(in1, LOW);
+	digitalWrite(in1, LOW);
   	digitalWrite(in2, HIGH);
   	digitalWrite(in3, HIGH);
   	digitalWrite(in4, LOW);
