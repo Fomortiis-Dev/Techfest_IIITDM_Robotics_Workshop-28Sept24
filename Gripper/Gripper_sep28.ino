@@ -37,10 +37,10 @@ void setup(){
 	pinMode(in4, OUTPUT); // declare as output for L298 Pin in4 
 	//pinMode(enB, OUTPUT); // declare as output for L298 Pin enB
 
-	digitalWrite(in1, LOW); //Right Motor forword Pin 
-	digitalWrite(in2, LOW); //Right Motor backword Pin 
-	digitalWrite(in3, LOW); //Left Motor backword Pin 
-	digitalWrite(in4, LOW); //Left Motor forword Pin 
+	digitalWrite(in1, LOW); //Right Motor forward Pin 
+	digitalWrite(in2, LOW); //Right Motor backward Pin 
+	digitalWrite(in3, LOW); //Left Motor backward Pin 
+	digitalWrite(in4, LOW); //Left Motor forward Pin 
 
 	delay(1000);
 }
@@ -60,9 +60,9 @@ void loop(){
 
 
 	if(bt_data == 1)
-	  {forword(); }  // if the bt_data is '1' the DC motor will go forward
+	  {forward(); }  // if the bt_data is '1' the DC motor will go forward
 	else if(bt_data == 2)
-	  {backword();}  // if the bt_data is '2' the motor will Reverse
+	  {backward();}  // if the bt_data is '2' the motor will Reverse
 	else if(bt_data == 3)
 	  {turnLeft();}  // if the bt_data is '3' the motor will turn left
 	else if(bt_data == 4)
@@ -103,18 +103,18 @@ void loop(){
 }
 
 
-void forword(){  //forword
-	digitalWrite(in1, HIGH);   //Right Motor forword Pin 
-	digitalWrite(in2, LOW);   //Right Motor backword Pin 
+void forward(){  //forward
+	digitalWrite(in1, HIGH);   //Right Motor forward Pin 
+	digitalWrite(in2, LOW);   //Right Motor backward Pin 
 	digitalWrite(in3, HIGH);  //Left Motor forward Pin 
 	digitalWrite(in4, LOW);   //Left Motor backward Pin 
 }
 
-void backword(){ //backword
-digitalWrite(in1, LOW);  
-digitalWrite(in2, HIGH); 
-digitalWrite(in3, LOW); 
-digitalWrite(in4, HIGH);  
+void backward(){ //backward
+	digitalWrite(in1, LOW);  
+	digitalWrite(in2, HIGH); 
+	digitalWrite(in3, LOW); 
+	digitalWrite(in4, HIGH);  
 }
 
 void turnRight(){ //turnRight
